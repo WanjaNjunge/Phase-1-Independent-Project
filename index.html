@@ -16,17 +16,28 @@
 
 
     <link rel="stylesheet" href="style.css" />
-    <script src="./JS/index.js" type="module"></script>
+    
 
 
   </head>
   <body>
     <header>
       <a href="./index.html" class="logo">
-        <img src="./movie-svgrepo-com.svg" width="50" height="32" alt="flix home">
+        <img src="./movie-svgrepo-com.svg" width="65" height="40" alt="flix home">
       </a>
 
-      <div class="search-box" search-box>
+      <h1>flix.com</h1>
+
+      
+
+      
+    </header>
+
+    <div id="search-results"></div>
+
+      <div id="recommendation">
+
+        <div class="search-box" search-box>
 
           <div class="search-wrapper" search-wrapper>
               <input type="text" name="search" aria-label="search movies" 
@@ -48,67 +59,40 @@
           alt="open search box">
       </button>
 
-      <button class="menu-btn" menu-btn menu-toggler>
-          <img src="./images/menu.png" width="24" height="24"
-          alt="open menu" class="menu">
-          <img src="./images/menu-close.png" width="24" height="24"
-          alt="close menu" class="close">
-      </button>
-    </header>
 
-    <!--side-bar-->
-    <nav class="sidebar" sidebar>
-      <div class="sidebar-inner">
 
-        <div class="sidebar-list">
-          <p class="title">Genre</p>
 
-          <a href="./index.html" menu-close class="sidebar-link">
-              Action
-          </a>
-          <a href="./index.html" menu-close class="sidebar-link">
-              Horror
-          </a>
-          <a href="./index.html" menu-close class="sidebar-link">
-              Comedy
-          </a>
-          <a href="./index.html" menu-close class="sidebar-link">
-              Adventure
-          </a>
-          <a href="./index.html" menu-close class="sidebar-link">
-              Drama
-          </a>
-          <a href="./index.html" menu-close class="sidebar-link">
-              Sci-Fi
-          </a>
-        </div>
-
-        <div class="sidebar-list">
-          <p class="title">Language</p>
-
-          <a href="./index.html" menu-close class="sidebar-link">
-              English
-          </a>
-          <a href="./index.html" menu-close class="sidebar-link">
-              Hindi
-          </a>
-          <a href="./index.html" menu-close class="sidebar-link">
-              Bengali
-          </a>
-
-         
-        </div>
-
-        <div class="sidebar-footer">
-          <p class="copyright">
-              Copyright 2023
-          </p>
-          
-          <img src="./images/tmdb-logo.svg" width="130" height="17" alt="the movie database logo">
-        </div>
-
+        <form id="movie-form">
+          <div>
+            <label for="genre-select">Select a genre:</label>
+            <select id="genre-select" name="genre">
+              <option value="">--Select a genre--</option>
+              <option value="28">Action</option>
+              <option value="35">Comedy</option>
+              <option value="18">Drama</option>
+              <option value="10751">Family</option>
+              <option value="14">Fantasy</option>
+              <option value="27">Horror</option>
+              <option value="9648">Mystery</option>
+              <option value="10749">Romance</option>
+              <option value="878">Science Fiction</option>
+              <option value="53">Thriller</option>
+            </select>
+          </div>
+  
+          <div>
+            <label for="year-range">Select a release year range:</label>
+            <input type="number" id="year-from" name="year-from" min="1900" max="2023" value="2010" />
+            <input type="number" id="year-to" name="year-to" min="1900" max="2023" value="2023" />
+          </div>
+          <button type="submit">Get Recommendations</button>
+        </form>
+        <div id="movie-results"></div>
       </div>
-    </nav>
+    
+    
+
+
     <div class="overlay" overlay menu-toggler></div>
 
     <article class="container" page-content>
@@ -309,48 +293,24 @@
 
         </div>
 
-        <div class="slider-control">
-
-          <div class="control-inner">
-
-            <button class="poster-box slider-item active">
-              <img src="./images/slider-control.jpg" alt="Slide to Puss in Boots: The Last Wish"
-              loading="lazy" draggable="false" class="img-cover">
-            </button>
-
-            <button class="poster-box slider-item">
-              <img src="./images/slider-control.jpg" alt="Slide to Puss in Boots: The Last Wish"
-              loading="lazy" draggable="false" class="img-cover">
-            </button>
-
-            <button class="poster-box slider-item">
-              <img src="./images/slider-control.jpg" alt="Slide to Puss in Boots: The Last Wish"
-              loading="lazy" draggable="false" class="img-cover">
-            </button>
-
-            <button class="poster-box slider-item">
-              <img src="./images/slider-control.jpg" alt="Slide to Puss in Boots: The Last Wish"
-              loading="lazy" draggable="false" class="img-cover">
-            </button>
-
-            <button class="poster-box slider-item">
-              <img src="./images/slider-control.jpg" alt="Slide to Puss in Boots: The Last Wish"
-              loading="lazy" draggable="false" class="img-cover">
-            </button>
-
-            <button class="poster-box slider-item">
-              <img src="./images/slider-control.jpg" alt="Slide to Puss in Boots: The Last Wish"
-              loading="lazy" draggable="false" class="img-cover">
-            </button>
-
-
-          </div>
-        </div>
+        
 
       </section>
 
     </article>
 
-    <script src="./JS/global.js"></script>
+    <footer>
+      <div class="sidebar-footer">
+        <p class="copyright">
+            Copyright 2023
+        </p>
+        
+        <img src="./images/tmdb-logo.svg" width="130" height="17" alt="the movie database logo">
+      </div>
+    </footer>
+
+    
+
+    <script src="./global.js"></script>
   </body>
 </html>
